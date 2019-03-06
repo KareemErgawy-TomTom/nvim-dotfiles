@@ -31,6 +31,7 @@ nmap <F8> <Plug>(ale_fix)
 
 " fzf
 nnoremap <C-p> :FZF<CR>
+nnoremap <C-[> :GFiles<CR>
 "
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
