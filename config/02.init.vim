@@ -50,14 +50,14 @@ set relativenumber
 set grepprg=rg\ --vimgrep
 
 " python packages in venv
-let g:python_host_prog = '/home/lergawy/.virtualenvs/nvim2/bin/python'
-let g:python3_host_prog = '/home/lergawy/.virtualenvs/nvim3/bin/python'
+let g:python_host_prog = '/Users/ergawy/.virtualenvs/nvim2/bin/python'
+let g:python3_host_prog = '/Users/ergawy/.virtualenvs/nvim3/bin/python'
 
 " Set colors in terminal
 " Solarized, dark, with true color support
 set termguicolors
-set background=dark
-colorscheme NeoSolarized
+let ayucolor="dark"
+colorscheme ayu
 
 " close vim if only window left is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -87,3 +87,7 @@ let g:clang_format#auto_format = 1
 
 set autoread
 au FocusGained * :checktime
+
+execute pathogen#infect()
+
+let g:rooter_use_lcd = 1

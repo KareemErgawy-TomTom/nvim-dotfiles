@@ -28,7 +28,6 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('neomutt/neomutt.vim')
 	call dein#add('junegunn/fzf')
     call dein#add('KareemErgawy/fzf.vim')
-	call dein#add('alaric/neovim-visor')
 	call dein#add('christoomey/vim-tmux-navigator')
 	call dein#add('autozimu/LanguageClient-neovim', {
 				\ 'rev': 'next',
@@ -39,6 +38,12 @@ if dein#load_state('~/.cache/dein')
     call dein#add('jiangmiao/auto-pairs')
     call dein#add('rhysd/vim-clang-format')
     call dein#add('vim-scripts/a.vim')
+    call dein#add('KareemErgawy/ayu-vim')
+    call dein#add('airblade/vim-rooter')
+    call dein#add('sakhnik/nvim-gdb', {
+                \ 'do': ':!./install.sh \| UpdateRemotePlugins',
+                \ })
+    call dein#add('deoplete-plugins/deoplete-asm')
 
 	" Required:
 	call dein#end()

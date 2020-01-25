@@ -13,6 +13,10 @@ call deoplete#custom#source('LanguageClient',
             \ 'min_pattern_length',
             \ 2)
 
+call deoplete#custom#source('asm',
+            \ 'min_pattern_length',
+            \ 1)
+
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
@@ -29,8 +33,10 @@ call deoplete#custom#option('sources', {
             \ 'cpp': ['LanguageClient'],
             \ 'c': ['LanguageClient'],
             \ 'vim': ['vim'],
+            \ 'asm': ['asm']
             \})
 
 " ignored sources
 let g:deoplete#ignore_sources = {}
 let g:deoplete#ignore_sources._ = ['buffer', 'around']
+

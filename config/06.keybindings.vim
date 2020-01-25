@@ -23,7 +23,7 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> gr :call LanguageClient_textDocument_references()<CR>
 nnoremap <silent> gs :call LanguageClient_textDocument_documentSymbol()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <C-r> :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> gf :call LanguageClient_textDocument_codeAction()<CR>
 
 " ALE
@@ -55,11 +55,8 @@ smap <silent><CR> <Plug>(neosnippet_jump_or_expand)
 
 " For conceal markers.
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+  set conceallevel=0 concealcursor=niv
 endif
-
-" neovim visor
-let g:neovim_visor_key = '<C-a>'
 
 " change working directory to where the file in the buffer is located
 " if user types `,cd`
@@ -72,3 +69,10 @@ tnoremap <ESC> <C-\><C-n><C-w><C-p>
 nnoremap <Tab> :Buffers<CR>
 
 let mapleader=","
+
+tnoremap <Esc> <C-\><C-n>
+
+"inoremap jk <esc>
+"tnoremap jk <C-\><C-n>
+
+"inoremap <esc> <nop>
