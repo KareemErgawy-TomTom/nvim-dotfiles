@@ -13,6 +13,7 @@ set backspace=indent,eol,start
 
 " Enable line numbers
 set nu
+autocmd TermOpen * setlocal nonumber norelativenumber
 
 " Enable line/column info at bottom
 set ruler
@@ -44,7 +45,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Sets relative line numbers in normal mode, absolute line numbers in insert
 " mode
 set number
-set relativenumber
+"set relativenumber
 
 " use ripgreg instead of grep
 set grepprg=rg\ --vimgrep
@@ -56,12 +57,16 @@ let g:python3_host_prog = '/Users/ergawy/.virtualenvs/nvim3/bin/python'
 " Set colors in terminal
 " Solarized, dark, with true color support
 set termguicolors
-let ayucolor="dark"
-colorscheme ayu
+let ayucolor="mirage"
+set background=dark
+colorscheme default 
 
 " close vim if only window left is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
+
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 
 " crontab filetype tweak (the way vim normally saves files confuses crontab
 " so this workaround allows for editing
@@ -83,7 +88,7 @@ autocmd BufLeave term://* stopinsert
 " ignore case in search by default
 set ignorecase
 
-let g:clang_format#auto_format = 1
+let g:clang_format#auto_format = 0
 
 set autoread
 au FocusGained * :checktime
@@ -91,3 +96,5 @@ au FocusGained * :checktime
 execute pathogen#infect()
 
 let g:rooter_use_lcd = 1
+
+set completeopt=menuone

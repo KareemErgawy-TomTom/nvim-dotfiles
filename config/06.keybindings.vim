@@ -15,22 +15,19 @@ nnoremap <C-H> <C-W><C-H>
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeMapQuit='\q'
 
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-" keybindings for language client
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> gr :call LanguageClient_textDocument_references()<CR>
-nnoremap <silent> gs :call LanguageClient_textDocument_documentSymbol()<CR>
-nnoremap <silent> <C-r> :call LanguageClient_textDocument_rename()<CR>
-nnoremap <silent> gf :call LanguageClient_textDocument_codeAction()<CR>
+" keybindings for YCM
+nnoremap <silent> gd :YcmCompleter GoTo<CR>
+nnoremap <silent> gf :YcmCompleter GoToReferences<CR>
+nnoremap <silent> gr :YcmCompleter RefactorRename
+nnoremap <silent> gt :YcmCompleter GetType<CR>
+nnoremap <silent> gx :YcmCompleter FixIt<CR>
+nnoremap <silent> ge :YcmDiags<CR>
 
 " ALE
 nmap <F8> <Plug>(ale_fix)
 
 " fzf
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-p> :Files<CR>
 nnoremap <C-[> :GFiles<CR>
 "
 " Plugin key-mappings.
@@ -47,11 +44,6 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" Expands or completes the selected snippet/item in the popup menu
-imap <expr><silent><CR> pumvisible() ? deoplete#mappings#close_popup() .
-      \ "\<Plug>(neosnippet_jump_or_expand)" : "\<CR>"
-smap <silent><CR> <Plug>(neosnippet_jump_or_expand)
 
 " For conceal markers.
 if has('conceal')
@@ -76,3 +68,5 @@ tnoremap <Esc> <C-\><C-n>
 "tnoremap jk <C-\><C-n>
 
 "inoremap <esc> <nop>
+
+nnoremap ` :noh<cr>
