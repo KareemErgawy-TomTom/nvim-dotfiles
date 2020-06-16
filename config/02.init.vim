@@ -98,3 +98,5 @@ execute pathogen#infect()
 let g:rooter_use_lcd = 1
 
 set completeopt=menuone
+
+autocmd BufLeave * silent! wall
