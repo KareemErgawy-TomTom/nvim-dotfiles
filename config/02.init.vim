@@ -52,14 +52,14 @@ set grepprg=rg\ --vimgrep
 
 " python packages in venv
 let g:python_host_prog = '/Users/ergawy/.virtualenvs/nvim2/bin/python'
-let g:python3_host_prog = '/Users/ergawy/.virtualenvs/nvim3/bin/python'
+let g:python3_host_prog = '/Users/ergawy/.virtualenvs/python3.8/bin/python'
 
 " Set colors in terminal
 " Solarized, dark, with true color support
 set termguicolors
 let ayucolor="mirage"
 set background=dark
-colorscheme default 
+colorscheme ci_dark
 
 " close vim if only window left is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -95,8 +95,10 @@ au FocusGained * :checktime
 
 execute pathogen#infect()
 
-let g:rooter_use_lcd = 1
+let g:rooter_cd_cmd="lcd"
 
 set completeopt=menuone
 
 autocmd BufLeave * silent! wall
+
+set rtp+=/usr/local/opt/fzf
