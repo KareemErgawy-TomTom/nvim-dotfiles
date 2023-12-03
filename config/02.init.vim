@@ -51,8 +51,8 @@ set number
 set grepprg=rg\ --vimgrep
 
 " python packages in venv
-let g:python_host_prog = '/Users/ergawy/.virtualenvs/nvim2/bin/python'
-let g:python3_host_prog = '/Users/ergawy/.virtualenvs/nvim3/bin/python'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Set colors in terminal
 " Solarized, dark, with true color support
