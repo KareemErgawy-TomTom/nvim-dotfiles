@@ -102,3 +102,5 @@ set completeopt=menuone
 autocmd BufLeave * silent! wall
 
 set rtp+=/usr/local/opt/fzf
+
+set shell=zsh
